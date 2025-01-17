@@ -16,15 +16,13 @@
 
 #include "ze_wrapper.h"
 
-#include "../rthwif/rtbuild/rtbuild.h"
-
 #include <iostream>
 #include <cstdio>
 #include <cassert>
 #include <mutex>
 #include <string.h>
 
-ZeWrapper::RTAS_BUILD_MODE ZeWrapper::rtas_builder = ZeWrapper::AUTO;
+bool ZeWrapper::rtas_builder_selected = false;
 
 static std::mutex zeWrapperMutex;
 static void* handle = nullptr;
@@ -92,7 +90,8 @@ ZeWrapper::~ZeWrapper() {
 
 ze_result_t selectLevelZeroRTASBuilder(ze_driver_handle_t hDriver)
 {
-  if (ZeWrapper::rtas_builder == ZeWrapper::LEVEL_ZERO)
+  /* only select rtas builder once! */
+  if (ZeWrapper::rtas_builder_selected)
     return ZE_RESULT_SUCCESS;
   
   auto zeRTASBuilderCreateExpTemp = find_symbol<decltype(zeRTASBuilderCreateExp)*>(handle,"zeRTASBuilderCreateExp");
@@ -121,31 +120,8 @@ ze_result_t selectLevelZeroRTASBuilder(ze_driver_handle_t hDriver)
   zeRTASParallelOperationGetPropertiesExpInternal = find_symbol<decltype(zeRTASParallelOperationGetPropertiesExp)*>(handle,"zeRTASParallelOperationGetPropertiesExp");
   zeRTASParallelOperationJoinExpInternal = find_symbol<decltype(zeRTASParallelOperationJoinExp)*>(handle,"zeRTASParallelOperationJoinExp");
   
-  ZeWrapper::rtas_builder = ZeWrapper::LEVEL_ZERO;
+  ZeWrapper::rtas_builder_selected = true;
   return ZE_RESULT_SUCCESS;
-}
-
-void selectInternalRTASBuilder()
-{
-#if defined(ZE_RAYTRACING_DISABLE_INTERNAL_BUILDER)
-  throw std::runtime_error("internal builder disabled at compile time");
-#else
-  if (ZeWrapper::rtas_builder == ZeWrapper::INTERNAL)
-    return;
-  
-  zeRTASBuilderCreateExpInternal = &zeRTASBuilderCreateExpImpl;
-  zeRTASBuilderDestroyExpInternal = &zeRTASBuilderDestroyExpImpl;
-  zeDriverRTASFormatCompatibilityCheckExpInternal = &zeDriverRTASFormatCompatibilityCheckExpImpl;
-  zeRTASBuilderGetBuildPropertiesExpInternal = &zeRTASBuilderGetBuildPropertiesExpImpl;
-  zeRTASBuilderBuildExpInternal = &zeRTASBuilderBuildExpImpl;
-  
-  zeRTASParallelOperationCreateExpInternal = &zeRTASParallelOperationCreateExpImpl;
-  zeRTASParallelOperationDestroyExpInternal = &zeRTASParallelOperationDestroyExpImpl;
-  zeRTASParallelOperationGetPropertiesExpInternal = &zeRTASParallelOperationGetPropertiesExpImpl;
-  zeRTASParallelOperationJoinExpInternal = &zeRTASParallelOperationJoinExpImpl;
-  
-  ZeWrapper::rtas_builder = ZeWrapper::INTERNAL;
-#endif
 }
 
 ze_result_t ZeWrapper::init()
@@ -171,42 +147,12 @@ ze_result_t ZeWrapper::init()
   return ZE_RESULT_SUCCESS;
 }
 
-ze_result_t ZeWrapper::initRTASBuilder(ze_driver_handle_t hDriver, RTAS_BUILD_MODE rtas_build_mode)
+ze_result_t ZeWrapper::initRTASBuilder(ze_driver_handle_t hDriver)
 {
   std::lock_guard<std::mutex> lock(zeWrapperMutex);
 
-  /* only select rtas builder once! */
-  if (rtas_builder != RTAS_BUILD_MODE::AUTO)
-  {
-    if (rtas_build_mode == RTAS_BUILD_MODE::AUTO)
-      return ZE_RESULT_SUCCESS;
-
-    if (rtas_builder == rtas_build_mode)
-      return ZE_RESULT_SUCCESS;
-
-    return ZE_RESULT_ERROR_UNKNOWN;
-  }
-
   try {
-    
-    if (rtas_build_mode == RTAS_BUILD_MODE::AUTO)
-    {
-      try {
-        if (selectLevelZeroRTASBuilder(hDriver) != ZE_RESULT_SUCCESS)
-          selectInternalRTASBuilder();
-      } catch (std::exception& e) {
-        selectInternalRTASBuilder();
-      }
-    }
-    
-    else if (rtas_build_mode == RTAS_BUILD_MODE::INTERNAL)
-      selectInternalRTASBuilder();
-    
-    else if (rtas_build_mode == RTAS_BUILD_MODE::LEVEL_ZERO)
-      return selectLevelZeroRTASBuilder(hDriver);
-    
-    else
-      throw std::runtime_error("internal error");
+    return selectLevelZeroRTASBuilder(hDriver);
   }
   catch (std::exception& e) {
     return ZE_RESULT_ERROR_UNKNOWN;
@@ -290,7 +236,7 @@ ze_result_t zeDeviceGetRTASPropertiesExp( const ze_device_handle_t hDevice, ze_r
   
   /* fill properties */
   pProperties->flags = 0;
-  pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_DEVICE_FORMAT_EXP_INVALID;
+  pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_FORMAT_EXP_INVALID;
   pProperties->rtasBufferAlignment = 128;
   
   /* check for supported device ID */
@@ -307,7 +253,7 @@ ze_result_t zeDeviceGetRTASPropertiesExp( const ze_device_handle_t hDevice, ze_r
   /* disabling of device check through env variable */
   const char* disable_device_check = std::getenv("EMBREE_DISABLE_DEVICEID_CHECK");
   if (disable_device_check && strcmp(disable_device_check,"1") == 0) {
-    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_DEVICE_FORMAT_EXP_VERSION_1;
+    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_FORMAT_EXP_VERSION_1;
     return ZE_RESULT_SUCCESS;
   }
   
@@ -320,7 +266,7 @@ ze_result_t zeDeviceGetRTASPropertiesExp( const ze_device_handle_t hDevice, ze_r
     (0x56C0 <= device_id && device_id <= 0x56C1);
   
   if (dg2) {
-    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_DEVICE_FORMAT_EXP_VERSION_1;
+    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_FORMAT_EXP_VERSION_1;
     return ZE_RESULT_SUCCESS;
   }
   
@@ -332,7 +278,7 @@ ze_result_t zeDeviceGetRTASPropertiesExp( const ze_device_handle_t hDevice, ze_r
     (device_id == 0x0BD4);
       
   if (pvc) {
-    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_DEVICE_FORMAT_EXP_VERSION_1;
+    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_FORMAT_EXP_VERSION_1;
     return ZE_RESULT_SUCCESS;
   }
   
@@ -345,7 +291,7 @@ ze_result_t zeDeviceGetRTASPropertiesExp( const ze_device_handle_t hDevice, ze_r
     (device_id == 0x7D60);
   
   if (mtl) {
-    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_DEVICE_FORMAT_EXP_VERSION_1;
+    pProperties->rtasFormat = (ze_rtas_format_exp_t) ZE_RTAS_FORMAT_EXP_VERSION_1;
     return ZE_RESULT_SUCCESS;
   }
   
@@ -356,21 +302,6 @@ ze_result_t ZeWrapper::zeDeviceGetProperties(ze_device_handle_t ze_handle, ze_de
 {
   if (!handle || !zeDeviceGetPropertiesInternal)
     throw std::runtime_error("ZeWrapper not initialized, call ZeWrapper::init() first.");
-
-  if (ZeWrapper::rtas_builder == ZeWrapper::INTERNAL)
-  {
-    if (props->pNext && ((ze_base_properties_t*)props->pNext)->stype == ZE_STRUCTURE_TYPE_RTAS_DEVICE_EXP_PROPERTIES)
-    {
-      ze_result_t result = zeDeviceGetRTASPropertiesExp(ze_handle, (ze_rtas_device_exp_properties_t*)props->pNext);
-      if (result != ZE_RESULT_SUCCESS) return result;
-      
-      void* pNext = props->pNext;
-      props->pNext = ((ze_base_properties_t*)props->pNext)->pNext;
-      result = zeDeviceGetPropertiesInternal(ze_handle, props);
-      props->pNext = pNext;
-      return result;
-    }
-  }
     
   return zeDeviceGetPropertiesInternal(ze_handle, props);
 }

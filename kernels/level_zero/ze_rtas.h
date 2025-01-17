@@ -132,6 +132,9 @@ typedef enum _ze_rtas_device_exp_flag_t
 typedef enum _ze_rtas_format_exp_t
 {
     ZE_RTAS_FORMAT_EXP_INVALID = 0,                                         ///< Invalid acceleration structure format
+    ZE_RTAS_FORMAT_EXP_VERSION_1 = 1,
+    ZE_RTAS_FORMAT_EXP_VERSION_2 = 2,
+    ZE_RTAS_FORMAT_EXP_VERSION_MAX = 2,
     ZE_RTAS_FORMAT_EXP_FORCE_UINT32 = 0x7fffffff
 
 } ze_rtas_format_exp_t;
