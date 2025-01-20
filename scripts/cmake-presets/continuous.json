@@ -88,16 +88,6 @@
       }
     },
     {
-      "name": "windows-DG2-JIT-INTERNAL-L0RTAS",
-      "inherits": ["package-windows", "env", "dpcpp-windows", "ispc_NEWEST", "tbb_NEWEST"],
-      "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "EMBREE_SYCL_SUPPORT": "ON",
-        "EMBREE_SYCL_AOT_DEVICES": "none",
-        "EMBREE_MAX_ISA": "SSE2"
-      }
-    },
-    {
       "name": "linux-fedora29-CLANG4",
       "inherits": ["package-linux", "env", "clang4", "ispc_NEWEST", "tbb_NEWEST"],
       "cacheVariables": {
