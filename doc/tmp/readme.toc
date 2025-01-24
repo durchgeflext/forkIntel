@@ -1,0 +1,868 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Intel® Embree Overview}{6}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Supported Platforms}{7}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Embree Support and Contact}{7}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Version History}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Embree 4.1.0}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Embree 4.0.1}{8}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Embree 4.0.0}{8}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Embree 3.13.5}{9}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Embree 3.13.4}{9}{subsection.1.3.5}%
+\contentsline {subsection}{\numberline {1.3.6}Embree 3.13.3}{9}{subsection.1.3.6}%
+\contentsline {subsection}{\numberline {1.3.7}Embree 3.13.2}{10}{subsection.1.3.7}%
+\contentsline {subsection}{\numberline {1.3.8}Embree 3.13.1}{10}{subsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.3.9}Embree 3.13.0}{10}{subsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.3.10}Embree 3.12.2}{10}{subsection.1.3.10}%
+\contentsline {subsection}{\numberline {1.3.11}Embree 3.12.1}{10}{subsection.1.3.11}%
+\contentsline {subsection}{\numberline {1.3.12}Embree 3.12.0}{11}{subsection.1.3.12}%
+\contentsline {subsection}{\numberline {1.3.13}Embree 3.11.0}{11}{subsection.1.3.13}%
+\contentsline {subsection}{\numberline {1.3.14}Embree 3.10.0}{11}{subsection.1.3.14}%
+\contentsline {subsection}{\numberline {1.3.15}Embree 3.9.0}{12}{subsection.1.3.15}%
+\contentsline {subsection}{\numberline {1.3.16}Embree 3.8.0}{12}{subsection.1.3.16}%
+\contentsline {subsection}{\numberline {1.3.17}New Features in Embree 3.7.0}{12}{subsection.1.3.17}%
+\contentsline {subsection}{\numberline {1.3.18}New Features in Embree 3.6.1}{13}{subsection.1.3.18}%
+\contentsline {subsection}{\numberline {1.3.19}New Features in Embree 3.6}{13}{subsection.1.3.19}%
+\contentsline {subsection}{\numberline {1.3.20}New Features in Embree 3.5.2}{13}{subsection.1.3.20}%
+\contentsline {subsection}{\numberline {1.3.21}New Features in Embree 3.5.1}{14}{subsection.1.3.21}%
+\contentsline {subsection}{\numberline {1.3.22}New Features in Embree 3.5.0}{14}{subsection.1.3.22}%
+\contentsline {subsection}{\numberline {1.3.23}New Features in Embree 3.4.0}{14}{subsection.1.3.23}%
+\contentsline {subsection}{\numberline {1.3.24}New Features in Embree 3.3.0}{14}{subsection.1.3.24}%
+\contentsline {subsection}{\numberline {1.3.25}New Features in Embree 3.2.4}{14}{subsection.1.3.25}%
+\contentsline {subsection}{\numberline {1.3.26}New Features in Embree 3.2.3}{15}{subsection.1.3.26}%
+\contentsline {subsection}{\numberline {1.3.27}New Features in Embree 3.2.2}{15}{subsection.1.3.27}%
+\contentsline {subsection}{\numberline {1.3.28}New Features in Embree 3.2.1}{15}{subsection.1.3.28}%
+\contentsline {subsection}{\numberline {1.3.29}New Features in Embree 3.2.0}{15}{subsection.1.3.29}%
+\contentsline {subsection}{\numberline {1.3.30}New Features in Embree 3.1.0}{16}{subsection.1.3.30}%
+\contentsline {subsection}{\numberline {1.3.31}New Features in Embree 3.0.0}{16}{subsection.1.3.31}%
+\contentsline {subsection}{\numberline {1.3.32}New Features in Embree 2.17.5}{17}{subsection.1.3.32}%
+\contentsline {subsection}{\numberline {1.3.33}New Features in Embree 2.17.4}{17}{subsection.1.3.33}%
+\contentsline {subsection}{\numberline {1.3.34}New Features in Embree 2.17.3}{17}{subsection.1.3.34}%
+\contentsline {subsection}{\numberline {1.3.35}New Features in Embree 2.17.2}{17}{subsection.1.3.35}%
+\contentsline {subsection}{\numberline {1.3.36}New Features in Embree 2.17.1}{17}{subsection.1.3.36}%
+\contentsline {subsection}{\numberline {1.3.37}New Features in Embree 2.17.0}{18}{subsection.1.3.37}%
+\contentsline {subsection}{\numberline {1.3.38}New Features in Embree 2.16.5}{18}{subsection.1.3.38}%
+\contentsline {subsection}{\numberline {1.3.39}New Features in Embree 2.16.4}{19}{subsection.1.3.39}%
+\contentsline {subsection}{\numberline {1.3.40}New Features in Embree 2.16.3}{19}{subsection.1.3.40}%
+\contentsline {subsection}{\numberline {1.3.41}New Features in Embree 2.16.2}{19}{subsection.1.3.41}%
+\contentsline {subsection}{\numberline {1.3.42}New Features in Embree 2.16.1}{19}{subsection.1.3.42}%
+\contentsline {subsection}{\numberline {1.3.43}New Features in Embree 2.16.0}{19}{subsection.1.3.43}%
+\contentsline {subsection}{\numberline {1.3.44}New Features in Embree 2.15.0}{20}{subsection.1.3.44}%
+\contentsline {subsection}{\numberline {1.3.45}New Features in Embree 2.14.0}{21}{subsection.1.3.45}%
+\contentsline {subsection}{\numberline {1.3.46}New Features in Embree 2.13.0}{22}{subsection.1.3.46}%
+\contentsline {subsection}{\numberline {1.3.47}New Features in Embree 2.12.0}{22}{subsection.1.3.47}%
+\contentsline {subsection}{\numberline {1.3.48}New Features in Embree 2.11.0}{23}{subsection.1.3.48}%
+\contentsline {subsection}{\numberline {1.3.49}New Features in Embree 2.10.0}{23}{subsection.1.3.49}%
+\contentsline {subsection}{\numberline {1.3.50}New Features in Embree 2.9.0}{23}{subsection.1.3.50}%
+\contentsline {subsection}{\numberline {1.3.51}New Features in Embree 2.8.1}{24}{subsection.1.3.51}%
+\contentsline {subsection}{\numberline {1.3.52}New Features in Embree 2.8.0}{24}{subsection.1.3.52}%
+\contentsline {subsection}{\numberline {1.3.53}New Features in Embree 2.7.1}{24}{subsection.1.3.53}%
+\contentsline {subsection}{\numberline {1.3.54}New Features in Embree 2.7.0}{25}{subsection.1.3.54}%
+\contentsline {subsection}{\numberline {1.3.55}New Features in Embree 2.6.2}{25}{subsection.1.3.55}%
+\contentsline {subsection}{\numberline {1.3.56}New Features in Embree 2.6.1}{25}{subsection.1.3.56}%
+\contentsline {subsection}{\numberline {1.3.57}New Features in Embree 2.6.0}{25}{subsection.1.3.57}%
+\contentsline {subsection}{\numberline {1.3.58}New Features in Embree 2.5.1}{26}{subsection.1.3.58}%
+\contentsline {subsection}{\numberline {1.3.59}New Features in Embree 2.5.0}{26}{subsection.1.3.59}%
+\contentsline {subsection}{\numberline {1.3.60}New Features in Embree 2.4}{26}{subsection.1.3.60}%
+\contentsline {subsection}{\numberline {1.3.61}New Features in Embree 2.3.3}{26}{subsection.1.3.61}%
+\contentsline {subsection}{\numberline {1.3.62}New Features in Embree 2.3.2}{27}{subsection.1.3.62}%
+\contentsline {subsection}{\numberline {1.3.63}New Features in Embree 2.3.1}{27}{subsection.1.3.63}%
+\contentsline {subsection}{\numberline {1.3.64}New Features in Embree 2.3}{27}{subsection.1.3.64}%
+\contentsline {subsection}{\numberline {1.3.65}New Features in Embree 2.2}{27}{subsection.1.3.65}%
+\contentsline {subsection}{\numberline {1.3.66}New Features in Embree 2.1}{28}{subsection.1.3.66}%
+\contentsline {subsection}{\numberline {1.3.67}New Features in Embree 2.0}{28}{subsection.1.3.67}%
+\contentsline {chapter}{\numberline {2}Installation of Embree}{29}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Windows Installation}{29}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Linux Installation}{29}{section.2.2}%
+\contentsline {section}{\numberline {2.3}macOS Installation}{29}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Building Embree Applications}{30}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Building Embree SYCL Applications}{30}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}JIT Compilation}{31}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}AOT Compilation}{31}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Compiling Embree}{32}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Linux and macOS}{32}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Linux SYCL Compilation}{34}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Linux Graphics Driver Installation}{36}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Windows}{36}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Using the IDE}{37}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Using the Command Line}{37}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Building Embree - Using vcpkg}{38}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.4}Windows SYCL Compilation}{38}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Windows Graphics Driver Installation}{40}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.5}CMake Configuration}{40}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Embree API}{44}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Device Object}{45}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Scene Object}{45}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Geometry Object}{46}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Ray Queries}{46}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Point Queries}{47}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Collision Detection}{47}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Filter Functions}{47}{section.4.7}%
+\contentsline {section}{\numberline {4.8}BVH Build API}{48}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Embree SYCL API}{49}{chapter.5}%
+\contentsline {section}{\numberline {5.1}SYCL JIT caching}{51}{section.5.1}%
+\contentsline {section}{\numberline {5.2}SYCL Memory Pooling}{51}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Embree SYCL Limitations}{52}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Embree SYCL Known Issues}{53}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Upgrading from Embree 3 to Embree 4}{54}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Embree API Reference}{57}{chapter.7}%
+\contentsline {section}{\numberline {7.1}rtcNewDevice}{57}{section.7.1}%
+\contentsline {subsubsection}{NAME}{57}{section*.2}%
+\contentsline {subsubsection}{SYNOPSIS}{57}{section*.3}%
+\contentsline {subsubsection}{DESCRIPTION}{57}{section*.4}%
+\contentsline {subsubsection}{EXIT STATUS}{59}{section*.5}%
+\contentsline {subsubsection}{SEE ALSO}{59}{section*.6}%
+\contentsline {section}{\numberline {7.2}rtcNewSYCLDevice}{60}{section.7.2}%
+\contentsline {subsubsection}{NAME}{60}{section*.7}%
+\contentsline {subsubsection}{SYNOPSIS}{60}{section*.8}%
+\contentsline {subsubsection}{DESCRIPTION}{60}{section*.9}%
+\contentsline {subsubsection}{EXIT STATUS}{60}{section*.10}%
+\contentsline {subsubsection}{SEE ALSO}{60}{section*.11}%
+\contentsline {section}{\numberline {7.3}rtcIsSYCLDeviceSupported}{61}{section.7.3}%
+\contentsline {subsubsection}{NAME}{61}{section*.12}%
+\contentsline {subsubsection}{SYNOPSIS}{61}{section*.13}%
+\contentsline {subsubsection}{DESCRIPTION}{61}{section*.14}%
+\contentsline {subsubsection}{EXIT STATUS}{61}{section*.15}%
+\contentsline {subsubsection}{SEE ALSO}{61}{section*.16}%
+\contentsline {section}{\numberline {7.4}rtcSYCLDeviceSelector}{62}{section.7.4}%
+\contentsline {subsubsection}{NAME}{62}{section*.17}%
+\contentsline {subsubsection}{SYNOPSIS}{62}{section*.18}%
+\contentsline {subsubsection}{DESCRIPTION}{62}{section*.19}%
+\contentsline {subsubsection}{EXIT STATUS}{62}{section*.20}%
+\contentsline {subsubsection}{SEE ALSO}{62}{section*.21}%
+\contentsline {section}{\numberline {7.5}rtcSetDeviceSYCLDevice}{63}{section.7.5}%
+\contentsline {subsubsection}{NAME}{63}{section*.22}%
+\contentsline {subsubsection}{SYNOPSIS}{63}{section*.23}%
+\contentsline {subsubsection}{DESCRIPTION}{63}{section*.24}%
+\contentsline {subsubsection}{EXIT STATUS}{63}{section*.25}%
+\contentsline {subsubsection}{SEE ALSO}{63}{section*.26}%
+\contentsline {section}{\numberline {7.6}rtcRetainDevice}{64}{section.7.6}%
+\contentsline {subsubsection}{NAME}{64}{section*.27}%
+\contentsline {subsubsection}{SYNOPSIS}{64}{section*.28}%
+\contentsline {subsubsection}{DESCRIPTION}{64}{section*.29}%
+\contentsline {subsubsection}{EXIT STATUS}{64}{section*.30}%
+\contentsline {subsubsection}{SEE ALSO}{64}{section*.31}%
+\contentsline {section}{\numberline {7.7}rtcReleaseDevice}{65}{section.7.7}%
+\contentsline {subsubsection}{NAME}{65}{section*.32}%
+\contentsline {subsubsection}{SYNOPSIS}{65}{section*.33}%
+\contentsline {subsubsection}{DESCRIPTION}{65}{section*.34}%
+\contentsline {subsubsection}{EXIT STATUS}{65}{section*.35}%
+\contentsline {subsubsection}{SEE ALSO}{65}{section*.36}%
+\contentsline {section}{\numberline {7.8}rtcGetDeviceProperty}{66}{section.7.8}%
+\contentsline {subsubsection}{NAME}{66}{section*.37}%
+\contentsline {subsubsection}{SYNOPSIS}{66}{section*.38}%
+\contentsline {subsubsection}{DESCRIPTION}{66}{section*.39}%
+\contentsline {subsubsection}{EXIT STATUS}{68}{section*.40}%
+\contentsline {section}{\numberline {7.9}rtcGetDeviceError}{69}{section.7.9}%
+\contentsline {subsubsection}{NAME}{69}{section*.41}%
+\contentsline {subsubsection}{SYNOPSIS}{69}{section*.42}%
+\contentsline {subsubsection}{DESCRIPTION}{69}{section*.43}%
+\contentsline {subsubsection}{EXIT STATUS}{69}{section*.44}%
+\contentsline {subsubsection}{SEE ALSO}{70}{section*.45}%
+\contentsline {section}{\numberline {7.10}rtcSetDeviceErrorFunction}{71}{section.7.10}%
+\contentsline {subsubsection}{NAME}{71}{section*.46}%
+\contentsline {subsubsection}{SYNOPSIS}{71}{section*.47}%
+\contentsline {subsubsection}{DESCRIPTION}{71}{section*.48}%
+\contentsline {subsubsection}{EXIT STATUS}{71}{section*.49}%
+\contentsline {subsubsection}{SEE ALSO}{71}{section*.50}%
+\contentsline {section}{\numberline {7.11}rtcSetDeviceMemoryMonitorFunction}{72}{section.7.11}%
+\contentsline {subsubsection}{NAME}{72}{section*.51}%
+\contentsline {subsubsection}{SYNOPSIS}{72}{section*.52}%
+\contentsline {subsubsection}{DESCRIPTION}{72}{section*.53}%
+\contentsline {subsubsection}{EXIT STATUS}{73}{section*.54}%
+\contentsline {subsubsection}{SEE ALSO}{73}{section*.55}%
+\contentsline {section}{\numberline {7.12}rtcNewScene}{74}{section.7.12}%
+\contentsline {subsubsection}{NAME}{74}{section*.56}%
+\contentsline {subsubsection}{SYNOPSIS}{74}{section*.57}%
+\contentsline {subsubsection}{DESCRIPTION}{74}{section*.58}%
+\contentsline {subsubsection}{EXIT STATUS}{74}{section*.59}%
+\contentsline {subsubsection}{SEE ALSO}{74}{section*.60}%
+\contentsline {section}{\numberline {7.13}rtcGetSceneDevice}{75}{section.7.13}%
+\contentsline {subsubsection}{NAME}{75}{section*.61}%
+\contentsline {subsubsection}{SYNOPSIS}{75}{section*.62}%
+\contentsline {subsubsection}{DESCRIPTION}{75}{section*.63}%
+\contentsline {subsubsection}{EXIT STATUS}{75}{section*.64}%
+\contentsline {subsubsection}{SEE ALSO}{75}{section*.65}%
+\contentsline {section}{\numberline {7.14}rtcRetainScene}{76}{section.7.14}%
+\contentsline {subsubsection}{NAME}{76}{section*.66}%
+\contentsline {subsubsection}{SYNOPSIS}{76}{section*.67}%
+\contentsline {subsubsection}{DESCRIPTION}{76}{section*.68}%
+\contentsline {subsubsection}{EXIT STATUS}{76}{section*.69}%
+\contentsline {subsubsection}{SEE ALSO}{76}{section*.70}%
+\contentsline {section}{\numberline {7.15}rtcReleaseScene}{77}{section.7.15}%
+\contentsline {subsubsection}{NAME}{77}{section*.71}%
+\contentsline {subsubsection}{SYNOPSIS}{77}{section*.72}%
+\contentsline {subsubsection}{DESCRIPTION}{77}{section*.73}%
+\contentsline {subsubsection}{EXIT STATUS}{77}{section*.74}%
+\contentsline {subsubsection}{SEE ALSO}{77}{section*.75}%
+\contentsline {section}{\numberline {7.16}rtcAttachGeometry}{78}{section.7.16}%
+\contentsline {subsubsection}{NAME}{78}{section*.76}%
+\contentsline {subsubsection}{SYNOPSIS}{78}{section*.77}%
+\contentsline {subsubsection}{DESCRIPTION}{78}{section*.78}%
+\contentsline {subsubsection}{EXIT STATUS}{78}{section*.79}%
+\contentsline {subsubsection}{SEE ALSO}{78}{section*.80}%
+\contentsline {section}{\numberline {7.17}rtcAttachGeometryByID}{79}{section.7.17}%
+\contentsline {subsubsection}{NAME}{79}{section*.81}%
+\contentsline {subsubsection}{SYNOPSIS}{79}{section*.82}%
+\contentsline {subsubsection}{DESCRIPTION}{79}{section*.83}%
+\contentsline {subsubsection}{EXIT STATUS}{79}{section*.84}%
+\contentsline {subsubsection}{SEE ALSO}{79}{section*.85}%
+\contentsline {section}{\numberline {7.18}rtcDetachGeometry}{80}{section.7.18}%
+\contentsline {subsubsection}{NAME}{80}{section*.86}%
+\contentsline {subsubsection}{SYNOPSIS}{80}{section*.87}%
+\contentsline {subsubsection}{DESCRIPTION}{80}{section*.88}%
+\contentsline {subsubsection}{EXIT STATUS}{80}{section*.89}%
+\contentsline {subsubsection}{SEE ALSO}{80}{section*.90}%
+\contentsline {section}{\numberline {7.19}rtcGetGeometry}{81}{section.7.19}%
+\contentsline {subsubsection}{NAME}{81}{section*.91}%
+\contentsline {subsubsection}{SYNOPSIS}{81}{section*.92}%
+\contentsline {subsubsection}{DESCRIPTION}{81}{section*.93}%
+\contentsline {subsubsection}{EXIT STATUS}{81}{section*.94}%
+\contentsline {subsubsection}{SEE ALSO}{81}{section*.95}%
+\contentsline {section}{\numberline {7.20}rtcGetGeometryThreadSafe}{82}{section.7.20}%
+\contentsline {subsubsection}{NAME}{82}{section*.96}%
+\contentsline {subsubsection}{SYNOPSIS}{82}{section*.97}%
+\contentsline {subsubsection}{DESCRIPTION}{82}{section*.98}%
+\contentsline {subsubsection}{EXIT STATUS}{82}{section*.99}%
+\contentsline {subsubsection}{SEE ALSO}{82}{section*.100}%
+\contentsline {section}{\numberline {7.21}rtcCommitScene}{83}{section.7.21}%
+\contentsline {subsubsection}{NAME}{83}{section*.101}%
+\contentsline {subsubsection}{SYNOPSIS}{83}{section*.102}%
+\contentsline {subsubsection}{DESCRIPTION}{83}{section*.103}%
+\contentsline {subsubsection}{EXIT STATUS}{83}{section*.104}%
+\contentsline {subsubsection}{SEE ALSO}{83}{section*.105}%
+\contentsline {section}{\numberline {7.22}rtcJoinCommitScene}{84}{section.7.22}%
+\contentsline {subsubsection}{NAME}{84}{section*.106}%
+\contentsline {subsubsection}{SYNOPSIS}{84}{section*.107}%
+\contentsline {subsubsection}{DESCRIPTION}{84}{section*.108}%
+\contentsline {subsubsection}{EXIT STATUS}{85}{section*.109}%
+\contentsline {subsubsection}{SEE ALSO}{85}{section*.110}%
+\contentsline {section}{\numberline {7.23}rtcSetSceneProgressMonitorFunction}{86}{section.7.23}%
+\contentsline {subsubsection}{NAME}{86}{section*.111}%
+\contentsline {subsubsection}{SYNOPSIS}{86}{section*.112}%
+\contentsline {subsubsection}{DESCRIPTION}{86}{section*.113}%
+\contentsline {subsubsection}{EXIT STATUS}{86}{section*.114}%
+\contentsline {subsubsection}{SEE ALSO}{87}{section*.115}%
+\contentsline {section}{\numberline {7.24}rtcSetSceneBuildQuality}{88}{section.7.24}%
+\contentsline {subsubsection}{NAME}{88}{section*.116}%
+\contentsline {subsubsection}{SYNOPSIS}{88}{section*.117}%
+\contentsline {subsubsection}{DESCRIPTION}{88}{section*.118}%
+\contentsline {subsubsection}{EXIT STATUS}{88}{section*.119}%
+\contentsline {subsubsection}{SEE ALSO}{88}{section*.120}%
+\contentsline {section}{\numberline {7.25}rtcSetSceneFlags}{89}{section.7.25}%
+\contentsline {subsubsection}{NAME}{89}{section*.121}%
+\contentsline {subsubsection}{SYNOPSIS}{89}{section*.122}%
+\contentsline {subsubsection}{DESCRIPTION}{89}{section*.123}%
+\contentsline {subsubsection}{EXIT STATUS}{89}{section*.124}%
+\contentsline {subsubsection}{SEE ALSO}{90}{section*.125}%
+\contentsline {section}{\numberline {7.26}rtcGetSceneFlags}{91}{section.7.26}%
+\contentsline {subsubsection}{NAME}{91}{section*.126}%
+\contentsline {subsubsection}{SYNOPSIS}{91}{section*.127}%
+\contentsline {subsubsection}{DESCRIPTION}{91}{section*.128}%
+\contentsline {subsubsection}{EXIT STATUS}{91}{section*.129}%
+\contentsline {subsubsection}{SEE ALSO}{91}{section*.130}%
+\contentsline {section}{\numberline {7.27}rtcGetSceneBounds}{92}{section.7.27}%
+\contentsline {subsubsection}{NAME}{92}{section*.131}%
+\contentsline {subsubsection}{SYNOPSIS}{92}{section*.132}%
+\contentsline {subsubsection}{DESCRIPTION}{92}{section*.133}%
+\contentsline {subsubsection}{EXIT STATUS}{92}{section*.134}%
+\contentsline {subsubsection}{SEE ALSO}{92}{section*.135}%
+\contentsline {section}{\numberline {7.28}rtcGetSceneLinearBounds}{93}{section.7.28}%
+\contentsline {subsubsection}{NAME}{93}{section*.136}%
+\contentsline {subsubsection}{SYNOPSIS}{93}{section*.137}%
+\contentsline {subsubsection}{DESCRIPTION}{93}{section*.138}%
+\contentsline {subsubsection}{EXIT STATUS}{93}{section*.139}%
+\contentsline {subsubsection}{SEE ALSO}{93}{section*.140}%
+\contentsline {section}{\numberline {7.29}rtcNewGeometry}{94}{section.7.29}%
+\contentsline {subsubsection}{NAME}{94}{section*.141}%
+\contentsline {subsubsection}{SYNOPSIS}{94}{section*.142}%
+\contentsline {subsubsection}{DESCRIPTION}{94}{section*.143}%
+\contentsline {subsubsection}{EXIT STATUS}{96}{section*.144}%
+\contentsline {subsubsection}{SEE ALSO}{96}{section*.145}%
+\contentsline {section}{\numberline {7.30}RTC\_GEOMETRY\_TYPE\_TRIANGLE}{97}{section.7.30}%
+\contentsline {subsubsection}{NAME}{97}{section*.146}%
+\contentsline {subsubsection}{SYNOPSIS}{97}{section*.147}%
+\contentsline {subsubsection}{DESCRIPTION}{97}{section*.148}%
+\contentsline {subsubsection}{EXIT STATUS}{98}{section*.149}%
+\contentsline {subsubsection}{SEE ALSO}{98}{section*.150}%
+\contentsline {section}{\numberline {7.31}RTC\_GEOMETRY\_TYPE\_QUAD}{99}{section.7.31}%
+\contentsline {subsubsection}{NAME}{99}{section*.151}%
+\contentsline {subsubsection}{SYNOPSIS}{99}{section*.152}%
+\contentsline {subsubsection}{DESCRIPTION}{99}{section*.153}%
+\contentsline {subsubsection}{EXIT STATUS}{100}{section*.154}%
+\contentsline {subsubsection}{SEE ALSO}{100}{section*.155}%
+\contentsline {section}{\numberline {7.32}RTC\_GEOMETRY\_TYPE\_GRID}{101}{section.7.32}%
+\contentsline {subsubsection}{NAME}{101}{section*.156}%
+\contentsline {subsubsection}{SYNOPSIS}{101}{section*.157}%
+\contentsline {subsubsection}{DESCRIPTION}{101}{section*.158}%
+\contentsline {subsubsection}{EXIT STATUS}{102}{section*.159}%
+\contentsline {subsubsection}{SEE ALSO}{102}{section*.160}%
+\contentsline {section}{\numberline {7.33}RTC\_GEOMETRY\_TYPE\_SUBDIVISION}{103}{section.7.33}%
+\contentsline {subsubsection}{NAME}{103}{section*.161}%
+\contentsline {subsubsection}{SYNOPSIS}{103}{section*.162}%
+\contentsline {subsubsection}{DESCRIPTION}{103}{section*.163}%
+\contentsline {subsubsection}{Parametrization}{104}{section*.164}%
+\contentsline {subsubsection}{Face-Varying Data}{105}{section*.165}%
+\contentsline {subsubsection}{EXIT STATUS}{105}{section*.166}%
+\contentsline {subsubsection}{SEE ALSO}{105}{section*.167}%
+\contentsline {section}{\numberline {7.34}RTC\_GEOMETRY\_TYPE\_CURVE}{106}{section.7.34}%
+\contentsline {subsubsection}{NAME}{106}{section*.168}%
+\contentsline {subsubsection}{SYNOPSIS}{107}{section*.169}%
+\contentsline {subsubsection}{DESCRIPTION}{107}{section*.170}%
+\contentsline {paragraph}{Linear Basis}{108}{section*.171}%
+\contentsline {paragraph}{Bézier Basis}{108}{section*.172}%
+\contentsline {paragraph}{B-spline Basis}{108}{section*.173}%
+\contentsline {paragraph}{Hermite Basis}{109}{section*.174}%
+\contentsline {paragraph}{Catmull-Rom Basis}{109}{section*.175}%
+\contentsline {paragraph}{Flat Curves}{109}{section*.176}%
+\contentsline {paragraph}{Normal Oriented Curves}{109}{section*.177}%
+\contentsline {paragraph}{Round Curves}{110}{section*.178}%
+\contentsline {subsubsection}{EXIT STATUS}{110}{section*.179}%
+\contentsline {subsubsection}{SEE ALSO}{110}{section*.180}%
+\contentsline {section}{\numberline {7.35}RTC\_GEOMETRY\_TYPE\_POINT}{111}{section.7.35}%
+\contentsline {subsubsection}{NAME}{111}{section*.181}%
+\contentsline {subsubsection}{SYNOPSIS}{111}{section*.182}%
+\contentsline {subsubsection}{DESCRIPTION}{111}{section*.183}%
+\contentsline {subsubsection}{EXIT STATUS}{112}{section*.184}%
+\contentsline {subsubsection}{SEE ALSO}{112}{section*.185}%
+\contentsline {section}{\numberline {7.36}RTC\_GEOMETRY\_TYPE\_USER}{113}{section.7.36}%
+\contentsline {subsubsection}{NAME}{113}{section*.186}%
+\contentsline {subsubsection}{SYNOPSIS}{113}{section*.187}%
+\contentsline {subsubsection}{DESCRIPTION}{113}{section*.188}%
+\contentsline {subsubsection}{EXIT STATUS}{114}{section*.189}%
+\contentsline {subsubsection}{SEE ALSO}{114}{section*.190}%
+\contentsline {section}{\numberline {7.37}RTC\_GEOMETRY\_TYPE\_INSTANCE}{115}{section.7.37}%
+\contentsline {subsubsection}{NAME}{115}{section*.191}%
+\contentsline {subsubsection}{SYNOPSIS}{115}{section*.192}%
+\contentsline {subsubsection}{DESCRIPTION}{115}{section*.193}%
+\contentsline {subsubsection}{EXIT STATUS}{116}{section*.194}%
+\contentsline {subsubsection}{SEE ALSO}{116}{section*.195}%
+\contentsline {section}{\numberline {7.38}RTCCurveFlags}{117}{section.7.38}%
+\contentsline {subsubsection}{NAME}{117}{section*.196}%
+\contentsline {subsubsection}{SYNOPSIS}{117}{section*.197}%
+\contentsline {subsubsection}{DESCRIPTION}{117}{section*.198}%
+\contentsline {subsubsection}{EXIT STATUS}{117}{section*.199}%
+\contentsline {subsubsection}{SEE ALSO}{117}{section*.200}%
+\contentsline {section}{\numberline {7.39}rtcRetainGeometry}{118}{section.7.39}%
+\contentsline {subsubsection}{NAME}{118}{section*.201}%
+\contentsline {subsubsection}{SYNOPSIS}{118}{section*.202}%
+\contentsline {subsubsection}{DESCRIPTION}{118}{section*.203}%
+\contentsline {subsubsection}{EXIT STATUS}{118}{section*.204}%
+\contentsline {subsubsection}{SEE ALSO}{118}{section*.205}%
+\contentsline {section}{\numberline {7.40}rtcReleaseGeometry}{119}{section.7.40}%
+\contentsline {subsubsection}{NAME}{119}{section*.206}%
+\contentsline {subsubsection}{SYNOPSIS}{119}{section*.207}%
+\contentsline {subsubsection}{DESCRIPTION}{119}{section*.208}%
+\contentsline {subsubsection}{EXIT STATUS}{119}{section*.209}%
+\contentsline {subsubsection}{SEE ALSO}{119}{section*.210}%
+\contentsline {section}{\numberline {7.41}rtcCommitGeometry}{120}{section.7.41}%
+\contentsline {subsubsection}{NAME}{120}{section*.211}%
+\contentsline {subsubsection}{SYNOPSIS}{120}{section*.212}%
+\contentsline {subsubsection}{DESCRIPTION}{120}{section*.213}%
+\contentsline {subsubsection}{EXIT STATUS}{120}{section*.214}%
+\contentsline {subsubsection}{SEE ALSO}{120}{section*.215}%
+\contentsline {section}{\numberline {7.42}rtcEnableGeometry}{121}{section.7.42}%
+\contentsline {subsubsection}{NAME}{121}{section*.216}%
+\contentsline {subsubsection}{SYNOPSIS}{121}{section*.217}%
+\contentsline {subsubsection}{DESCRIPTION}{121}{section*.218}%
+\contentsline {subsubsection}{EXIT STATUS}{121}{section*.219}%
+\contentsline {subsubsection}{SEE ALSO}{121}{section*.220}%
+\contentsline {section}{\numberline {7.43}rtcDisableGeometry}{122}{section.7.43}%
+\contentsline {subsubsection}{NAME}{122}{section*.221}%
+\contentsline {subsubsection}{SYNOPSIS}{122}{section*.222}%
+\contentsline {subsubsection}{DESCRIPTION}{122}{section*.223}%
+\contentsline {subsubsection}{EXIT STATUS}{122}{section*.224}%
+\contentsline {subsubsection}{SEE ALSO}{122}{section*.225}%
+\contentsline {section}{\numberline {7.44}rtcSetGeometryTimeStepCount}{123}{section.7.44}%
+\contentsline {subsubsection}{NAME}{123}{section*.226}%
+\contentsline {subsubsection}{SYNOPSIS}{123}{section*.227}%
+\contentsline {subsubsection}{DESCRIPTION}{123}{section*.228}%
+\contentsline {subsubsection}{EXIT STATUS}{123}{section*.229}%
+\contentsline {subsubsection}{SEE ALSO}{123}{section*.230}%
+\contentsline {section}{\numberline {7.45}rtcSetGeometryTimeRange}{124}{section.7.45}%
+\contentsline {subsubsection}{NAME}{124}{section*.231}%
+\contentsline {subsubsection}{SYNOPSIS}{124}{section*.232}%
+\contentsline {subsubsection}{DESCRIPTION}{124}{section*.233}%
+\contentsline {subsubsection}{EXIT STATUS}{124}{section*.234}%
+\contentsline {subsubsection}{SEE ALSO}{124}{section*.235}%
+\contentsline {section}{\numberline {7.46}rtcSetGeometryVertexAttributeCount}{125}{section.7.46}%
+\contentsline {subsubsection}{NAME}{125}{section*.236}%
+\contentsline {subsubsection}{SYNOPSIS}{125}{section*.237}%
+\contentsline {subsubsection}{DESCRIPTION}{125}{section*.238}%
+\contentsline {subsubsection}{EXIT STATUS}{125}{section*.239}%
+\contentsline {subsubsection}{SEE ALSO}{125}{section*.240}%
+\contentsline {section}{\numberline {7.47}rtcSetGeometryMask}{126}{section.7.47}%
+\contentsline {subsubsection}{NAME}{126}{section*.241}%
+\contentsline {subsubsection}{SYNOPSIS}{126}{section*.242}%
+\contentsline {subsubsection}{DESCRIPTION}{126}{section*.243}%
+\contentsline {subsubsection}{EXIT STATUS}{126}{section*.244}%
+\contentsline {subsubsection}{SEE ALSO}{126}{section*.245}%
+\contentsline {section}{\numberline {7.48}rtcSetGeometryBuildQuality}{127}{section.7.48}%
+\contentsline {subsubsection}{NAME}{127}{section*.246}%
+\contentsline {subsubsection}{SYNOPSIS}{127}{section*.247}%
+\contentsline {subsubsection}{DESCRIPTION}{127}{section*.248}%
+\contentsline {subsubsection}{EXIT STATUS}{127}{section*.249}%
+\contentsline {subsubsection}{SEE ALSO}{127}{section*.250}%
+\contentsline {section}{\numberline {7.49}rtcSetGeometryMaxRadiusScale}{128}{section.7.49}%
+\contentsline {subsubsection}{NAME}{128}{section*.251}%
+\contentsline {subsubsection}{SYNOPSIS}{128}{section*.252}%
+\contentsline {subsubsection}{DESCRIPTION}{128}{section*.253}%
+\contentsline {subsubsection}{EXIT STATUS}{129}{section*.254}%
+\contentsline {subsubsection}{SEE ALSO}{129}{section*.255}%
+\contentsline {section}{\numberline {7.50}rtcSetGeometryBuffer}{130}{section.7.50}%
+\contentsline {subsubsection}{NAME}{130}{section*.256}%
+\contentsline {subsubsection}{SYNOPSIS}{130}{section*.257}%
+\contentsline {subsubsection}{DESCRIPTION}{130}{section*.258}%
+\contentsline {subsubsection}{EXIT STATUS}{130}{section*.259}%
+\contentsline {subsubsection}{SEE ALSO}{130}{section*.260}%
+\contentsline {section}{\numberline {7.51}rtcSetSharedGeometryBuffer}{131}{section.7.51}%
+\contentsline {subsubsection}{NAME}{131}{section*.261}%
+\contentsline {subsubsection}{SYNOPSIS}{131}{section*.262}%
+\contentsline {subsubsection}{DESCRIPTION}{131}{section*.263}%
+\contentsline {subsubsection}{EXIT STATUS}{132}{section*.264}%
+\contentsline {subsubsection}{SEE ALSO}{132}{section*.265}%
+\contentsline {section}{\numberline {7.52}rtcSetNewGeometryBuffer}{133}{section.7.52}%
+\contentsline {subsubsection}{NAME}{133}{section*.266}%
+\contentsline {subsubsection}{SYNOPSIS}{133}{section*.267}%
+\contentsline {subsubsection}{DESCRIPTION}{133}{section*.268}%
+\contentsline {subsubsection}{EXIT STATUS}{133}{section*.269}%
+\contentsline {subsubsection}{SEE ALSO}{133}{section*.270}%
+\contentsline {section}{\numberline {7.53}RTCFormat}{134}{section.7.53}%
+\contentsline {subsubsection}{NAME}{134}{section*.271}%
+\contentsline {subsubsection}{SYNOPSIS}{134}{section*.272}%
+\contentsline {subsubsection}{DESCRIPTION}{134}{section*.273}%
+\contentsline {subsubsection}{EXIT STATUS}{135}{section*.274}%
+\contentsline {subsubsection}{SEE ALSO}{135}{section*.275}%
+\contentsline {section}{\numberline {7.54}RTCBufferType}{136}{section.7.54}%
+\contentsline {subsubsection}{NAME}{136}{section*.276}%
+\contentsline {subsubsection}{SYNOPSIS}{136}{section*.277}%
+\contentsline {subsubsection}{DESCRIPTION}{136}{section*.278}%
+\contentsline {subsubsection}{EXIT STATUS}{137}{section*.279}%
+\contentsline {subsubsection}{SEE ALSO}{137}{section*.280}%
+\contentsline {section}{\numberline {7.55}rtcGetGeometryBufferData}{138}{section.7.55}%
+\contentsline {subsubsection}{NAME}{138}{section*.281}%
+\contentsline {subsubsection}{SYNOPSIS}{138}{section*.282}%
+\contentsline {subsubsection}{DESCRIPTION}{138}{section*.283}%
+\contentsline {subsubsection}{EXIT STATUS}{138}{section*.284}%
+\contentsline {subsubsection}{SEE ALSO}{138}{section*.285}%
+\contentsline {section}{\numberline {7.56}rtcUpdateGeometryBuffer}{139}{section.7.56}%
+\contentsline {subsubsection}{NAME}{139}{section*.286}%
+\contentsline {subsubsection}{SYNOPSIS}{139}{section*.287}%
+\contentsline {subsubsection}{DESCRIPTION}{139}{section*.288}%
+\contentsline {subsubsection}{EXIT STATUS}{139}{section*.289}%
+\contentsline {subsubsection}{SEE ALSO}{139}{section*.290}%
+\contentsline {section}{\numberline {7.57}rtcSetGeometryIntersectFilterFunction}{140}{section.7.57}%
+\contentsline {subsubsection}{NAME}{140}{section*.291}%
+\contentsline {subsubsection}{SYNOPSIS}{140}{section*.292}%
+\contentsline {subsubsection}{DESCRIPTION}{140}{section*.293}%
+\contentsline {subsubsection}{EXIT STATUS}{141}{section*.294}%
+\contentsline {subsubsection}{SEE ALSO}{141}{section*.295}%
+\contentsline {section}{\numberline {7.58}rtcSetGeometryOccludedFilterFunction}{142}{section.7.58}%
+\contentsline {subsubsection}{NAME}{142}{section*.296}%
+\contentsline {subsubsection}{SYNOPSIS}{142}{section*.297}%
+\contentsline {subsubsection}{DESCRIPTION}{142}{section*.298}%
+\contentsline {subsubsection}{EXIT STATUS}{142}{section*.299}%
+\contentsline {subsubsection}{SEE ALSO}{142}{section*.300}%
+\contentsline {section}{\numberline {7.59}rtcSetGeometryEnableFilterFunctionFromArguments}{143}{section.7.59}%
+\contentsline {subsubsection}{NAME}{143}{section*.301}%
+\contentsline {subsubsection}{SYNOPSIS}{143}{section*.302}%
+\contentsline {subsubsection}{DESCRIPTION}{143}{section*.303}%
+\contentsline {subsubsection}{EXIT STATUS}{143}{section*.304}%
+\contentsline {subsubsection}{SEE ALSO}{143}{section*.305}%
+\contentsline {section}{\numberline {7.60}rtcInvokeIntersectFilterFromGeometry}{144}{section.7.60}%
+\contentsline {subsubsection}{NAME}{144}{section*.306}%
+\contentsline {subsubsection}{SYNOPSIS}{144}{section*.307}%
+\contentsline {subsubsection}{DESCRIPTION}{144}{section*.308}%
+\contentsline {subsubsection}{EXIT STATUS}{144}{section*.309}%
+\contentsline {subsubsection}{SEE ALSO}{144}{section*.310}%
+\contentsline {section}{\numberline {7.61}rtcInvokeOccludedFilterFromGeometry}{145}{section.7.61}%
+\contentsline {subsubsection}{NAME}{145}{section*.311}%
+\contentsline {subsubsection}{SYNOPSIS}{145}{section*.312}%
+\contentsline {subsubsection}{DESCRIPTION}{145}{section*.313}%
+\contentsline {subsubsection}{EXIT STATUS}{145}{section*.314}%
+\contentsline {subsubsection}{SEE ALSO}{145}{section*.315}%
+\contentsline {section}{\numberline {7.62}rtcSetGeometryUserData}{146}{section.7.62}%
+\contentsline {subsubsection}{NAME}{146}{section*.316}%
+\contentsline {subsubsection}{SYNOPSIS}{146}{section*.317}%
+\contentsline {subsubsection}{DESCRIPTION}{146}{section*.318}%
+\contentsline {subsubsection}{EXIT STATUS}{146}{section*.319}%
+\contentsline {subsubsection}{SEE ALSO}{146}{section*.320}%
+\contentsline {section}{\numberline {7.63}rtcGetGeometryUserData}{147}{section.7.63}%
+\contentsline {subsubsection}{NAME}{147}{section*.321}%
+\contentsline {subsubsection}{SYNOPSIS}{147}{section*.322}%
+\contentsline {subsubsection}{DESCRIPTION}{147}{section*.323}%
+\contentsline {subsubsection}{EXIT STATUS}{147}{section*.324}%
+\contentsline {subsubsection}{SEE ALSO}{147}{section*.325}%
+\contentsline {section}{\numberline {7.64}rtcGetGeometryUserDataFromScene}{148}{section.7.64}%
+\contentsline {subsubsection}{NAME}{148}{section*.326}%
+\contentsline {subsubsection}{SYNOPSIS}{148}{section*.327}%
+\contentsline {subsubsection}{DESCRIPTION}{148}{section*.328}%
+\contentsline {subsubsection}{EXIT STATUS}{148}{section*.329}%
+\contentsline {subsubsection}{SEE ALSO}{148}{section*.330}%
+\contentsline {section}{\numberline {7.65}rtcSetGeometryUserPrimitiveCount}{149}{section.7.65}%
+\contentsline {subsubsection}{NAME}{149}{section*.331}%
+\contentsline {subsubsection}{SYNOPSIS}{149}{section*.332}%
+\contentsline {subsubsection}{DESCRIPTION}{149}{section*.333}%
+\contentsline {subsubsection}{EXIT STATUS}{149}{section*.334}%
+\contentsline {subsubsection}{SEE ALSO}{149}{section*.335}%
+\contentsline {section}{\numberline {7.66}rtcSetGeometryBoundsFunction}{150}{section.7.66}%
+\contentsline {subsubsection}{NAME}{150}{section*.336}%
+\contentsline {subsubsection}{SYNOPSIS}{150}{section*.337}%
+\contentsline {subsubsection}{DESCRIPTION}{150}{section*.338}%
+\contentsline {subsubsection}{EXIT STATUS}{151}{section*.339}%
+\contentsline {subsubsection}{SEE ALSO}{151}{section*.340}%
+\contentsline {section}{\numberline {7.67}rtcSetGeometryIntersectFunction}{152}{section.7.67}%
+\contentsline {subsubsection}{NAME}{152}{section*.341}%
+\contentsline {subsubsection}{SYNOPSIS}{152}{section*.342}%
+\contentsline {subsubsection}{DESCRIPTION}{152}{section*.343}%
+\contentsline {subsubsection}{EXIT STATUS}{153}{section*.344}%
+\contentsline {subsubsection}{SEE ALSO}{153}{section*.345}%
+\contentsline {section}{\numberline {7.68}rtcSetGeometryOccludedFunction}{154}{section.7.68}%
+\contentsline {subsubsection}{NAME}{154}{section*.346}%
+\contentsline {subsubsection}{SYNOPSIS}{154}{section*.347}%
+\contentsline {subsubsection}{DESCRIPTION}{154}{section*.348}%
+\contentsline {subsubsection}{EXIT STATUS}{155}{section*.349}%
+\contentsline {subsubsection}{SEE ALSO}{155}{section*.350}%
+\contentsline {section}{\numberline {7.69}rtcSetGeometryPointQueryFunction}{156}{section.7.69}%
+\contentsline {subsubsection}{NAME}{156}{section*.351}%
+\contentsline {subsubsection}{SYNOPSIS}{156}{section*.352}%
+\contentsline {subsubsection}{DESCRIPTION}{156}{section*.353}%
+\contentsline {subsubsection}{SEE ALSO}{158}{section*.354}%
+\contentsline {section}{\numberline {7.70}rtcGetSYCLDeviceFunctionPointer}{159}{section.7.70}%
+\contentsline {subsubsection}{NAME}{159}{section*.355}%
+\contentsline {subsubsection}{SYNOPSIS}{159}{section*.356}%
+\contentsline {subsubsection}{DESCRIPTION}{159}{section*.357}%
+\contentsline {subsubsection}{EXIT STATUS}{159}{section*.358}%
+\contentsline {subsubsection}{SEE ALSO}{159}{section*.359}%
+\contentsline {section}{\numberline {7.71}rtcSetGeometryInstancedScene}{160}{section.7.71}%
+\contentsline {subsubsection}{NAME}{160}{section*.360}%
+\contentsline {subsubsection}{SYNOPSIS}{160}{section*.361}%
+\contentsline {subsubsection}{DESCRIPTION}{160}{section*.362}%
+\contentsline {subsubsection}{EXIT STATUS}{160}{section*.363}%
+\contentsline {subsubsection}{SEE ALSO}{160}{section*.364}%
+\contentsline {section}{\numberline {7.72}rtcSetGeometryTransform}{161}{section.7.72}%
+\contentsline {subsubsection}{NAME}{161}{section*.365}%
+\contentsline {subsubsection}{SYNOPSIS}{161}{section*.366}%
+\contentsline {subsubsection}{DESCRIPTION}{161}{section*.367}%
+\contentsline {subsubsection}{EXIT STATUS}{161}{section*.368}%
+\contentsline {subsubsection}{SEE ALSO}{161}{section*.369}%
+\contentsline {section}{\numberline {7.73}rtcSetGeometryTransformQuaternion}{162}{section.7.73}%
+\contentsline {subsubsection}{NAME}{162}{section*.370}%
+\contentsline {subsubsection}{SYNOPSIS}{162}{section*.371}%
+\contentsline {subsubsection}{DESCRIPTION}{162}{section*.372}%
+\contentsline {subsubsection}{EXIT STATUS}{162}{section*.373}%
+\contentsline {subsubsection}{SEE ALSO}{162}{section*.374}%
+\contentsline {section}{\numberline {7.74}rtcGetGeometryTransform}{163}{section.7.74}%
+\contentsline {subsubsection}{NAME}{163}{section*.375}%
+\contentsline {subsubsection}{SYNOPSIS}{163}{section*.376}%
+\contentsline {subsubsection}{DESCRIPTION}{163}{section*.377}%
+\contentsline {subsubsection}{EXIT STATUS}{163}{section*.378}%
+\contentsline {subsubsection}{SEE ALSO}{163}{section*.379}%
+\contentsline {section}{\numberline {7.75}rtcSetGeometryTessellationRate}{164}{section.7.75}%
+\contentsline {subsubsection}{NAME}{164}{section*.380}%
+\contentsline {subsubsection}{SYNOPSIS}{164}{section*.381}%
+\contentsline {subsubsection}{DESCRIPTION}{164}{section*.382}%
+\contentsline {subsubsection}{EXIT STATUS}{164}{section*.383}%
+\contentsline {subsubsection}{SEE ALSO}{164}{section*.384}%
+\contentsline {section}{\numberline {7.76}rtcSetGeometryTopologyCount}{165}{section.7.76}%
+\contentsline {subsubsection}{NAME}{165}{section*.385}%
+\contentsline {subsubsection}{SYNOPSIS}{165}{section*.386}%
+\contentsline {subsubsection}{DESCRIPTION}{165}{section*.387}%
+\contentsline {subsubsection}{EXIT STATUS}{165}{section*.388}%
+\contentsline {subsubsection}{SEE ALSO}{165}{section*.389}%
+\contentsline {section}{\numberline {7.77}rtcSetGeometrySubdivisionMode}{166}{section.7.77}%
+\contentsline {subsubsection}{NAME}{166}{section*.390}%
+\contentsline {subsubsection}{SYNOPSIS}{166}{section*.391}%
+\contentsline {subsubsection}{DESCRIPTION}{166}{section*.392}%
+\contentsline {subsubsection}{EXIT STATUS}{166}{section*.393}%
+\contentsline {subsubsection}{SEE ALSO}{167}{section*.394}%
+\contentsline {section}{\numberline {7.78}rtcSetGeometryVertexAttributeTopology}{168}{section.7.78}%
+\contentsline {subsubsection}{NAME}{168}{section*.395}%
+\contentsline {subsubsection}{SYNOPSIS}{168}{section*.396}%
+\contentsline {subsubsection}{DESCRIPTION}{168}{section*.397}%
+\contentsline {subsubsection}{EXIT STATUS}{168}{section*.398}%
+\contentsline {subsubsection}{SEE ALSO}{168}{section*.399}%
+\contentsline {section}{\numberline {7.79}rtcSetGeometryDisplacementFunction}{169}{section.7.79}%
+\contentsline {subsubsection}{NAME}{169}{section*.400}%
+\contentsline {subsubsection}{SYNOPSIS}{169}{section*.401}%
+\contentsline {subsubsection}{DESCRIPTION}{169}{section*.402}%
+\contentsline {subsubsection}{EXIT STATUS}{170}{section*.403}%
+\contentsline {subsubsection}{SEE ALSO}{170}{section*.404}%
+\contentsline {section}{\numberline {7.80}rtcGetGeometryFirstHalfEdge}{171}{section.7.80}%
+\contentsline {subsubsection}{NAME}{171}{section*.405}%
+\contentsline {subsubsection}{SYNOPSIS}{171}{section*.406}%
+\contentsline {subsubsection}{DESCRIPTION}{171}{section*.407}%
+\contentsline {subsubsection}{EXIT STATUS}{171}{section*.408}%
+\contentsline {subsubsection}{SEE ALSO}{171}{section*.409}%
+\contentsline {section}{\numberline {7.81}rtcGetGeometryFace}{172}{section.7.81}%
+\contentsline {subsubsection}{NAME}{172}{section*.410}%
+\contentsline {subsubsection}{SYNOPSIS}{172}{section*.411}%
+\contentsline {subsubsection}{DESCRIPTION}{172}{section*.412}%
+\contentsline {subsubsection}{EXIT STATUS}{172}{section*.413}%
+\contentsline {subsubsection}{SEE ALSO}{172}{section*.414}%
+\contentsline {section}{\numberline {7.82}rtcGetGeometryNextHalfEdge}{173}{section.7.82}%
+\contentsline {subsubsection}{NAME}{173}{section*.415}%
+\contentsline {subsubsection}{SYNOPSIS}{173}{section*.416}%
+\contentsline {subsubsection}{DESCRIPTION}{173}{section*.417}%
+\contentsline {subsubsection}{EXIT STATUS}{173}{section*.418}%
+\contentsline {subsubsection}{SEE ALSO}{173}{section*.419}%
+\contentsline {section}{\numberline {7.83}rtcGetGeometryPreviousHalfEdge}{174}{section.7.83}%
+\contentsline {subsubsection}{NAME}{174}{section*.420}%
+\contentsline {subsubsection}{SYNOPSIS}{174}{section*.421}%
+\contentsline {subsubsection}{DESCRIPTION}{174}{section*.422}%
+\contentsline {subsubsection}{EXIT STATUS}{174}{section*.423}%
+\contentsline {subsubsection}{SEE ALSO}{174}{section*.424}%
+\contentsline {section}{\numberline {7.84}rtcGetGeometryOppositeHalfEdge}{175}{section.7.84}%
+\contentsline {subsubsection}{NAME}{175}{section*.425}%
+\contentsline {subsubsection}{SYNOPSIS}{175}{section*.426}%
+\contentsline {subsubsection}{DESCRIPTION}{175}{section*.427}%
+\contentsline {subsubsection}{EXIT STATUS}{175}{section*.428}%
+\contentsline {subsubsection}{SEE ALSO}{175}{section*.429}%
+\contentsline {section}{\numberline {7.85}rtcInterpolate}{176}{section.7.85}%
+\contentsline {subsubsection}{NAME}{176}{section*.430}%
+\contentsline {subsubsection}{SYNOPSIS}{176}{section*.431}%
+\contentsline {subsubsection}{DESCRIPTION}{176}{section*.432}%
+\contentsline {subsubsection}{EXIT STATUS}{177}{section*.433}%
+\contentsline {subsubsection}{SEE ALSO}{177}{section*.434}%
+\contentsline {section}{\numberline {7.86}rtcInterpolateN}{178}{section.7.86}%
+\contentsline {subsubsection}{NAME}{178}{section*.435}%
+\contentsline {subsubsection}{SYNOPSIS}{178}{section*.436}%
+\contentsline {subsubsection}{DESCRIPTION}{178}{section*.437}%
+\contentsline {subsubsection}{EXIT STATUS}{179}{section*.438}%
+\contentsline {subsubsection}{SEE ALSO}{179}{section*.439}%
+\contentsline {section}{\numberline {7.87}rtcNewBuffer}{180}{section.7.87}%
+\contentsline {subsubsection}{NAME}{180}{section*.440}%
+\contentsline {subsubsection}{SYNOPSIS}{180}{section*.441}%
+\contentsline {subsubsection}{DESCRIPTION}{180}{section*.442}%
+\contentsline {subsubsection}{EXIT STATUS}{180}{section*.443}%
+\contentsline {subsubsection}{SEE ALSO}{180}{section*.444}%
+\contentsline {section}{\numberline {7.88}rtcNewSharedBuffer}{181}{section.7.88}%
+\contentsline {subsubsection}{NAME}{181}{section*.445}%
+\contentsline {subsubsection}{SYNOPSIS}{181}{section*.446}%
+\contentsline {subsubsection}{DESCRIPTION}{181}{section*.447}%
+\contentsline {subsubsection}{EXIT STATUS}{181}{section*.448}%
+\contentsline {subsubsection}{SEE ALSO}{181}{section*.449}%
+\contentsline {section}{\numberline {7.89}rtcRetainBuffer}{182}{section.7.89}%
+\contentsline {subsubsection}{NAME}{182}{section*.450}%
+\contentsline {subsubsection}{SYNOPSIS}{182}{section*.451}%
+\contentsline {subsubsection}{DESCRIPTION}{182}{section*.452}%
+\contentsline {subsubsection}{EXIT STATUS}{182}{section*.453}%
+\contentsline {subsubsection}{SEE ALSO}{182}{section*.454}%
+\contentsline {section}{\numberline {7.90}rtcReleaseBuffer}{183}{section.7.90}%
+\contentsline {subsubsection}{NAME}{183}{section*.455}%
+\contentsline {subsubsection}{SYNOPSIS}{183}{section*.456}%
+\contentsline {subsubsection}{DESCRIPTION}{183}{section*.457}%
+\contentsline {subsubsection}{EXIT STATUS}{183}{section*.458}%
+\contentsline {subsubsection}{SEE ALSO}{183}{section*.459}%
+\contentsline {section}{\numberline {7.91}rtcGetBufferData}{184}{section.7.91}%
+\contentsline {subsubsection}{NAME}{184}{section*.460}%
+\contentsline {subsubsection}{SYNOPSIS}{184}{section*.461}%
+\contentsline {subsubsection}{DESCRIPTION}{184}{section*.462}%
+\contentsline {subsubsection}{EXIT STATUS}{184}{section*.463}%
+\contentsline {subsubsection}{SEE ALSO}{184}{section*.464}%
+\contentsline {section}{\numberline {7.92}RTCRay}{185}{section.7.92}%
+\contentsline {subsubsection}{NAME}{185}{section*.465}%
+\contentsline {subsubsection}{SYNOPSIS}{185}{section*.466}%
+\contentsline {subsubsection}{DESCRIPTION}{185}{section*.467}%
+\contentsline {subsubsection}{EXIT STATUS}{186}{section*.468}%
+\contentsline {subsubsection}{SEE ALSO}{186}{section*.469}%
+\contentsline {section}{\numberline {7.93}RTCHit}{187}{section.7.93}%
+\contentsline {subsubsection}{NAME}{187}{section*.470}%
+\contentsline {subsubsection}{SYNOPSIS}{187}{section*.471}%
+\contentsline {subsubsection}{DESCRIPTION}{187}{section*.472}%
+\contentsline {subsubsection}{EXIT STATUS}{187}{section*.473}%
+\contentsline {subsubsection}{SEE ALSO}{187}{section*.474}%
+\contentsline {section}{\numberline {7.94}RTCRayHit}{188}{section.7.94}%
+\contentsline {subsubsection}{NAME}{188}{section*.475}%
+\contentsline {subsubsection}{SYNOPSIS}{188}{section*.476}%
+\contentsline {subsubsection}{DESCRIPTION}{188}{section*.477}%
+\contentsline {subsubsection}{EXIT STATUS}{188}{section*.478}%
+\contentsline {subsubsection}{SEE ALSO}{188}{section*.479}%
+\contentsline {section}{\numberline {7.95}RTCRayN}{189}{section.7.95}%
+\contentsline {subsubsection}{NAME}{189}{section*.480}%
+\contentsline {subsubsection}{SYNOPSIS}{189}{section*.481}%
+\contentsline {subsubsection}{DESCRIPTION}{189}{section*.482}%
+\contentsline {subsubsection}{EXIT STATUS}{189}{section*.483}%
+\contentsline {subsubsection}{SEE ALSO}{189}{section*.484}%
+\contentsline {section}{\numberline {7.96}RTCHitN}{190}{section.7.96}%
+\contentsline {subsubsection}{NAME}{190}{section*.485}%
+\contentsline {subsubsection}{SYNOPSIS}{190}{section*.486}%
+\contentsline {subsubsection}{DESCRIPTION}{190}{section*.487}%
+\contentsline {subsubsection}{EXIT STATUS}{190}{section*.488}%
+\contentsline {subsubsection}{SEE ALSO}{190}{section*.489}%
+\contentsline {section}{\numberline {7.97}RTCRayHitN}{191}{section.7.97}%
+\contentsline {subsubsection}{NAME}{191}{section*.490}%
+\contentsline {subsubsection}{SYNOPSIS}{191}{section*.491}%
+\contentsline {subsubsection}{DESCRIPTION}{191}{section*.492}%
+\contentsline {subsubsection}{EXIT STATUS}{191}{section*.493}%
+\contentsline {subsubsection}{SEE ALSO}{191}{section*.494}%
+\contentsline {section}{\numberline {7.98}RTCFeatureFlags}{192}{section.7.98}%
+\contentsline {subsubsection}{NAME}{192}{section*.495}%
+\contentsline {subsubsection}{SYNOPSIS}{192}{section*.496}%
+\contentsline {subsubsection}{DESCRIPTION}{193}{section*.497}%
+\contentsline {subsubsection}{EXIT STATUS}{196}{section*.498}%
+\contentsline {subsubsection}{SEE ALSO}{196}{section*.499}%
+\contentsline {section}{\numberline {7.99}rtcInitIntersectArguments}{197}{section.7.99}%
+\contentsline {subsubsection}{NAME}{197}{section*.500}%
+\contentsline {subsubsection}{SYNOPSIS}{197}{section*.501}%
+\contentsline {subsubsection}{DESCRIPTION}{197}{section*.502}%
+\contentsline {subsubsection}{EXIT STATUS}{198}{section*.503}%
+\contentsline {subsubsection}{SEE ALSO}{198}{section*.504}%
+\contentsline {section}{\numberline {7.100}rtcInitOccludedArguments}{199}{section.7.100}%
+\contentsline {subsubsection}{NAME}{199}{section*.505}%
+\contentsline {subsubsection}{SYNOPSIS}{199}{section*.506}%
+\contentsline {subsubsection}{DESCRIPTION}{199}{section*.507}%
+\contentsline {subsubsection}{EXIT STATUS}{200}{section*.508}%
+\contentsline {subsubsection}{SEE ALSO}{200}{section*.509}%
+\contentsline {section}{\numberline {7.101}rtcInitRayQueryContext}{201}{section.7.101}%
+\contentsline {subsubsection}{NAME}{201}{section*.510}%
+\contentsline {subsubsection}{SYNOPSIS}{201}{section*.511}%
+\contentsline {subsubsection}{DESCRIPTION}{201}{section*.512}%
+\contentsline {subsubsection}{EXIT STATUS}{201}{section*.513}%
+\contentsline {subsubsection}{SEE ALSO}{201}{section*.514}%
+\contentsline {section}{\numberline {7.102}rtcIntersect1}{202}{section.7.102}%
+\contentsline {subsubsection}{NAME}{202}{section*.515}%
+\contentsline {subsubsection}{SYNOPSIS}{202}{section*.516}%
+\contentsline {subsubsection}{DESCRIPTION}{202}{section*.517}%
+\contentsline {subsubsection}{EXIT STATUS}{203}{section*.518}%
+\contentsline {subsubsection}{SEE ALSO}{203}{section*.519}%
+\contentsline {section}{\numberline {7.103}rtcOccluded1}{204}{section.7.103}%
+\contentsline {subsubsection}{NAME}{204}{section*.520}%
+\contentsline {subsubsection}{SYNOPSIS}{204}{section*.521}%
+\contentsline {subsubsection}{DESCRIPTION}{204}{section*.522}%
+\contentsline {subsubsection}{EXIT STATUS}{204}{section*.523}%
+\contentsline {subsubsection}{SEE ALSO}{205}{section*.524}%
+\contentsline {section}{\numberline {7.104}rtcIntersect4/8/16}{206}{section.7.104}%
+\contentsline {subsubsection}{NAME}{206}{section*.525}%
+\contentsline {subsubsection}{SYNOPSIS}{206}{section*.526}%
+\contentsline {subsubsection}{DESCRIPTION}{206}{section*.527}%
+\contentsline {subsubsection}{EXIT STATUS}{207}{section*.528}%
+\contentsline {subsubsection}{SEE ALSO}{207}{section*.529}%
+\contentsline {section}{\numberline {7.105}rtcOccluded4/8/16}{208}{section.7.105}%
+\contentsline {subsubsection}{NAME}{208}{section*.530}%
+\contentsline {subsubsection}{SYNOPSIS}{208}{section*.531}%
+\contentsline {subsubsection}{DESCRIPTION}{208}{section*.532}%
+\contentsline {subsubsection}{EXIT STATUS}{209}{section*.533}%
+\contentsline {subsubsection}{SEE ALSO}{209}{section*.534}%
+\contentsline {section}{\numberline {7.106}rtcForwardIntersect1}{210}{section.7.106}%
+\contentsline {subsubsection}{NAME}{210}{section*.535}%
+\contentsline {subsubsection}{SYNOPSIS}{210}{section*.536}%
+\contentsline {subsubsection}{DESCRIPTION}{210}{section*.537}%
+\contentsline {subsubsection}{EXIT STATUS}{210}{section*.538}%
+\contentsline {subsubsection}{SEE ALSO}{211}{section*.539}%
+\contentsline {section}{\numberline {7.107}rtcForwardOccluded1}{212}{section.7.107}%
+\contentsline {subsubsection}{NAME}{212}{section*.540}%
+\contentsline {subsubsection}{SYNOPSIS}{212}{section*.541}%
+\contentsline {subsubsection}{DESCRIPTION}{212}{section*.542}%
+\contentsline {subsubsection}{EXIT STATUS}{212}{section*.543}%
+\contentsline {subsubsection}{SEE ALSO}{213}{section*.544}%
+\contentsline {section}{\numberline {7.108}rtcForwardIntersect4/8/16}{214}{section.7.108}%
+\contentsline {subsubsection}{NAME}{214}{section*.545}%
+\contentsline {subsubsection}{SYNOPSIS}{214}{section*.546}%
+\contentsline {subsubsection}{DESCRIPTION}{214}{section*.547}%
+\contentsline {subsubsection}{EXIT STATUS}{215}{section*.548}%
+\contentsline {subsubsection}{SEE ALSO}{215}{section*.549}%
+\contentsline {section}{\numberline {7.109}rtcForwardOccluded4/8/16}{216}{section.7.109}%
+\contentsline {subsubsection}{NAME}{216}{section*.550}%
+\contentsline {subsubsection}{SYNOPSIS}{216}{section*.551}%
+\contentsline {subsubsection}{DESCRIPTION}{216}{section*.552}%
+\contentsline {subsubsection}{EXIT STATUS}{217}{section*.553}%
+\contentsline {subsubsection}{SEE ALSO}{217}{section*.554}%
+\contentsline {section}{\numberline {7.110}rtcInitPointQueryContext}{218}{section.7.110}%
+\contentsline {subsubsection}{NAME}{218}{section*.555}%
+\contentsline {subsubsection}{SYNOPSIS}{218}{section*.556}%
+\contentsline {subsubsection}{DESCRIPTION}{218}{section*.557}%
+\contentsline {subsubsection}{EXIT STATUS}{219}{section*.558}%
+\contentsline {subsubsection}{SEE ALSO}{219}{section*.559}%
+\contentsline {section}{\numberline {7.111}rtcPointQuery}{220}{section.7.111}%
+\contentsline {subsubsection}{NAME}{220}{section*.560}%
+\contentsline {subsubsection}{SYNOPSIS}{220}{section*.561}%
+\contentsline {subsubsection}{DESCRIPTION}{220}{section*.562}%
+\contentsline {subsubsection}{SUPPORTED PRIMITIVES}{221}{section*.563}%
+\contentsline {subsubsection}{EXIT STATUS}{221}{section*.564}%
+\contentsline {subsubsection}{SEE ALSO}{221}{section*.565}%
+\contentsline {section}{\numberline {7.112}rtcCollide}{222}{section.7.112}%
+\contentsline {subsubsection}{NAME}{222}{section*.566}%
+\contentsline {subsubsection}{SYNOPSIS}{222}{section*.567}%
+\contentsline {subsubsection}{DESCRIPTION}{222}{section*.568}%
+\contentsline {subsubsection}{SUPPORTED PRIMITIVES}{222}{section*.569}%
+\contentsline {subsubsection}{EXIT STATUS}{222}{section*.570}%
+\contentsline {subsubsection}{SEE ALSO}{223}{section*.571}%
+\contentsline {section}{\numberline {7.113}rtcNewBVH}{224}{section.7.113}%
+\contentsline {subsubsection}{NAME}{224}{section*.572}%
+\contentsline {subsubsection}{SYNOPSIS}{224}{section*.573}%
+\contentsline {subsubsection}{DESCRIPTION}{224}{section*.574}%
+\contentsline {subsubsection}{EXIT STATUS}{224}{section*.575}%
+\contentsline {subsubsection}{SEE ALSO}{224}{section*.576}%
+\contentsline {section}{\numberline {7.114}rtcRetainBVH}{225}{section.7.114}%
+\contentsline {subsubsection}{NAME}{225}{section*.577}%
+\contentsline {subsubsection}{SYNOPSIS}{225}{section*.578}%
+\contentsline {subsubsection}{DESCRIPTION}{225}{section*.579}%
+\contentsline {subsubsection}{EXIT STATUS}{225}{section*.580}%
+\contentsline {subsubsection}{SEE ALSO}{225}{section*.581}%
+\contentsline {section}{\numberline {7.115}rtcReleaseBVH}{226}{section.7.115}%
+\contentsline {subsubsection}{NAME}{226}{section*.582}%
+\contentsline {subsubsection}{SYNOPSIS}{226}{section*.583}%
+\contentsline {subsubsection}{DESCRIPTION}{226}{section*.584}%
+\contentsline {subsubsection}{EXIT STATUS}{226}{section*.585}%
+\contentsline {subsubsection}{SEE ALSO}{226}{section*.586}%
+\contentsline {section}{\numberline {7.116}rtcBuildBVH}{227}{section.7.116}%
+\contentsline {subsubsection}{NAME}{227}{section*.587}%
+\contentsline {subsubsection}{SYNOPSIS}{227}{section*.588}%
+\contentsline {subsubsection}{DESCRIPTION}{229}{section*.589}%
+\contentsline {subsubsection}{EXIT STATUS}{230}{section*.590}%
+\contentsline {subsubsection}{SEE ALSO}{230}{section*.591}%
+\contentsline {section}{\numberline {7.117}RTCQuaternionDecomposition}{231}{section.7.117}%
+\contentsline {subsubsection}{NAME}{231}{section*.592}%
+\contentsline {subsubsection}{SYNOPSIS}{231}{section*.593}%
+\contentsline {subsubsection}{DESCRIPTION}{231}{section*.594}%
+\contentsline {subsubsection}{EXIT STATUS}{232}{section*.595}%
+\contentsline {subsubsection}{SEE ALSO}{232}{section*.596}%
+\contentsline {section}{\numberline {7.118}rtcInitQuaternionDecomposition}{233}{section.7.118}%
+\contentsline {subsubsection}{NAME}{233}{section*.597}%
+\contentsline {subsubsection}{SYNOPSIS}{233}{section*.598}%
+\contentsline {subsubsection}{DESCRIPTION}{233}{section*.599}%
+\contentsline {subsubsection}{EXIT STATUS}{233}{section*.600}%
+\contentsline {subsubsection}{SEE ALSO}{233}{section*.601}%
+\contentsline {chapter}{\numberline {8}CPU Performance Recommendations}{234}{chapter.8}%
+\contentsline {section}{\numberline {8.1}MXCSR control and status register}{234}{section.8.1}%
+\contentsline {section}{\numberline {8.2}Thread Creation and Affinity Settings}{234}{section.8.2}%
+\contentsline {section}{\numberline {8.3}Fast Coherent Rays}{235}{section.8.3}%
+\contentsline {section}{\numberline {8.4}Huge Page Support}{235}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Huge Pages under Linux}{235}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Huge Pages under Windows}{236}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.3}Huge Pages under macOS}{236}{subsection.8.4.3}%
+\contentsline {section}{\numberline {8.5}Avoid store-to-load forwarding issues with single rays}{236}{section.8.5}%
+\contentsline {chapter}{\numberline {9}GPU Performance Recommendations}{237}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Low Code Complexity}{237}{section.9.1}%
+\contentsline {section}{\numberline {9.2}Feature Flags}{237}{section.9.2}%
+\contentsline {section}{\numberline {9.3}Inline Indirect Calls}{237}{section.9.3}%
+\contentsline {section}{\numberline {9.4}7 Bit Ray Mask}{238}{section.9.4}%
+\contentsline {section}{\numberline {9.5}Limit Motion Blur Motions}{238}{section.9.5}%
+\contentsline {section}{\numberline {9.6}Generic Pointers}{238}{section.9.6}%
+\contentsline {chapter}{\numberline {10}Embree Tutorials}{240}{chapter.10}%
+\contentsline {section}{\numberline {10.1}Minimal}{241}{section.10.1}%
+\contentsline {section}{\numberline {10.2}Triangle Geometry}{242}{section.10.2}%
+\contentsline {section}{\numberline {10.3}Dynamic Scene}{243}{section.10.3}%
+\contentsline {section}{\numberline {10.4}Multi Scene Geometry}{244}{section.10.4}%
+\contentsline {section}{\numberline {10.5}User Geometry}{245}{section.10.5}%
+\contentsline {section}{\numberline {10.6}Viewer}{246}{section.10.6}%
+\contentsline {section}{\numberline {10.7}Intersection Filter}{247}{section.10.7}%
+\contentsline {section}{\numberline {10.8}Instanced Geometry}{248}{section.10.8}%
+\contentsline {section}{\numberline {10.9}Multi Level Instancing}{249}{section.10.9}%
+\contentsline {section}{\numberline {10.10}Path Tracer}{250}{section.10.10}%
+\contentsline {section}{\numberline {10.11}Hair}{251}{section.10.11}%
+\contentsline {section}{\numberline {10.12}Curve Geometry}{252}{section.10.12}%
+\contentsline {section}{\numberline {10.13}Subdivision Geometry}{253}{section.10.13}%
+\contentsline {section}{\numberline {10.14}Displacement Geometry}{254}{section.10.14}%
+\contentsline {section}{\numberline {10.15}Grid Geometry}{255}{section.10.15}%
+\contentsline {section}{\numberline {10.16}Point Geometry}{256}{section.10.16}%
+\contentsline {section}{\numberline {10.17}Motion Blur Geometry}{257}{section.10.17}%
+\contentsline {section}{\numberline {10.18}Quaternion Motion Blur}{258}{section.10.18}%
+\contentsline {section}{\numberline {10.19}Interpolation}{259}{section.10.19}%
+\contentsline {section}{\numberline {10.20}Closest Point}{260}{section.10.20}%
+\contentsline {section}{\numberline {10.21}Voronoi}{261}{section.10.21}%
+\contentsline {section}{\numberline {10.22}Collision Detection}{262}{section.10.22}%
+\contentsline {section}{\numberline {10.23}BVH Builder}{262}{section.10.23}%
+\contentsline {section}{\numberline {10.24}BVH Access}{263}{section.10.24}%
+\contentsline {section}{\numberline {10.25}Find Embree}{263}{section.10.25}%
+\contentsline {section}{\numberline {10.26}Next Hit}{263}{section.10.26}%
