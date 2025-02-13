@@ -1138,7 +1138,8 @@ namespace embree {
     
   }
 
-      
+  //What in Cuthulus Name is the demonic abomination???
+  //I think this is supposed to merge all the clusters
   Vec2i convertISPCQuadMesh(ISPCQuadMesh* mesh, RTCScene scene, ISPCOBJMaterial *material,const uint32_t geomID,std::vector<LossyCompressedMesh*> &lcm_ptrs,std::vector<LossyCompressedMeshCluster> &lcm_clusters, std::vector<uint32_t> &lcm_clusterRootIDs, size_t &totalCompressedSize, size_t &numDecompressedBlocks, sycl::queue &queue)
   {
     const uint32_t numQuads = mesh->numQuads;
@@ -1655,6 +1656,7 @@ namespace embree {
   }  
 
 
+  //Finds a compressed vertex is a vector of vertices, and adds the vertex if necessary
   uint32_t findVertex(std::vector<CompressedVertex> &vertices, const CompressedVertex &cv)
   {
     for (uint32_t i=0;i<vertices.size();i++)
@@ -1663,7 +1665,8 @@ namespace embree {
     vertices.push_back(cv);
     return vertices.size()-1;
   }
-  
+
+  //Transforms triangle mesh into Quad mesh
   std::vector<Quad> extractQuads(TriangleMesh &mesh)
   {
     std::vector<Quad> quads;
