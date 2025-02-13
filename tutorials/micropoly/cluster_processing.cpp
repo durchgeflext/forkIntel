@@ -370,6 +370,7 @@ namespace embree {
     return strip_size;
   }
 
+  //Splits a Cluster in half
   bool QuadMeshCluster::split(QuadMeshCluster &left, QuadMeshCluster &right)
   {
     reorderPLOC();
@@ -459,6 +460,7 @@ namespace embree {
   }
   
 
+  //Computes simplification ratio, but there is also a simplification call
   float getSimplificationRatio(QuadMeshCluster &cluster0,QuadMeshCluster &cluster1)
   {
     TriangleMesh mesh;    
@@ -515,6 +517,7 @@ namespace embree {
   }
 
 
+  //Merges two clusters and simplifies them
   bool mergeSimplifyQuadMeshCluster(QuadMeshCluster &cluster0,QuadMeshCluster &cluster1, std::vector<QuadMeshCluster> &quadMeshes)
   {
     QuadMeshCluster quadMesh;
@@ -641,6 +644,7 @@ namespace embree {
 
   // ==========================================================
 
+  //Merges clusters without simplification
   void mergeQuadMeshCluster(QuadMeshCluster &cluster0,QuadMeshCluster &cluster1, std::vector<QuadMeshCluster> &quadMeshes)
   {
     QuadMeshCluster quadMesh = cluster0;
@@ -657,7 +661,8 @@ namespace embree {
     }
     quadMeshes.push_back(quadMesh);
   }
-  
+
+  //Merges clusters, simplifies them and might split them
   bool mergeSimplifyQuadMeshClusterDAG(QuadMeshCluster &cluster0,QuadMeshCluster &cluster1, std::vector<QuadMeshCluster> &quadMeshes)
   {
     DBG_PRINT3("CLUSTER MERGING",cluster0.quads.size(),cluster1.quads.size());
@@ -833,7 +838,7 @@ namespace embree {
   };
   
 
-  
+  //Extracts clusters from BVH2, recursive
   void extractClusters(const uint32_t currentID, BVH2Node *bvh, std::vector<QuadMeshCluster> &clusters, ISPCQuadMesh* mesh, const uint32_t threshold)
   {
     if (bvh[currentID].items() < threshold || bvh[currentID].isLeaf())
@@ -928,6 +933,9 @@ namespace embree {
   // ======================================================================================================================================================================================
   // ======================================================================================================================================================================================
 
+  //Extract ranges, but I have no Idea what ranges are
+  //This is PLOC?
+  //It is PLOC, but there is no neighborhood test
   template<typename SpaceCurveType>
   std::vector<QuadMeshCluster> extractRangesPLOC(std::vector<SpaceCurveType> &mcodes,const std::vector<BBox3f> &plocBounds, ISPCQuadMesh* mesh, const uint32_t threshold)
   {
@@ -1138,8 +1146,9 @@ namespace embree {
     
   }
 
-  //What in Cuthulus Name is the demonic abomination???
+  //What in Cuthulus Name is this demonic abomination???
   //I think this is supposed to merge all the clusters
+  //I also think this is the main part of micro poly?
   Vec2i convertISPCQuadMesh(ISPCQuadMesh* mesh, RTCScene scene, ISPCOBJMaterial *material,const uint32_t geomID,std::vector<LossyCompressedMesh*> &lcm_ptrs,std::vector<LossyCompressedMeshCluster> &lcm_clusters, std::vector<uint32_t> &lcm_clusterRootIDs, size_t &totalCompressedSize, size_t &numDecompressedBlocks, sycl::queue &queue)
   {
     const uint32_t numQuads = mesh->numQuads;
