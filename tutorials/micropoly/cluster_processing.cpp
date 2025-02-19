@@ -436,6 +436,7 @@ namespace embree {
     return false;
   }
 
+  //Counts how many vertices two quad meshes share
   uint32_t getNumSharedBorderVertices(const QuadMeshCluster &cluster0,const QuadMeshCluster &cluster1)
   {
     const BBox3f sharedBounds = intersect(cluster0.bounds,cluster1.bounds);
@@ -1330,6 +1331,8 @@ namespace embree {
             }
               
 #else
+          //IMPORTANT
+          //I found the else branch to the code above
           uint32_t numSharedBorderVertices = 0;
           for (int i=std::max((int)c-SEARCH_RADIUS,0);i<std::min((int)c+SEARCH_RADIUS+1,(int)current_numClusters);i++)
             if (i != c && index_buffer[i] != -1)
