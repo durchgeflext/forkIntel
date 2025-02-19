@@ -1315,6 +1315,8 @@ namespace embree {
             {
               const uint32_t merge_clusterID = index_buffer[i];
               BBox3f bounds = clusters[merge_clusterID].bounds;
+              //IMPORTANT
+              //This line is the heuristic for neighboring clusters. They just need to touch
               if (!intersect(cluster_bounds,bounds).empty() && !clusters[clusterID].isInvalidMergeID(merge_clusterID))
               {
                 bounds.extend(cluster_bounds);
