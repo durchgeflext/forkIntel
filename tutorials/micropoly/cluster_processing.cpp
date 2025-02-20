@@ -1339,6 +1339,7 @@ namespace embree {
             {
               const uint32_t merge_clusterID = index_buffer[i];
               const BBox3f bounds = clusters[merge_clusterID].bounds;
+              //When clusters are neighbours, they are not being merged
               if (!intersect(cluster_bounds,bounds).empty() && clusters[clusterID].neighborID != merge_clusterID)
               {
                 const uint32_t num = getNumSharedBorderVertices(clusters[clusterID],clusters[merge_clusterID]);
