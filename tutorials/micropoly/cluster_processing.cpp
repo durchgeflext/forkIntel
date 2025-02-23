@@ -464,6 +464,7 @@ namespace embree {
   //Computes simplification ratio, but there is also a simplification call
   float getSimplificationRatio(QuadMeshCluster &cluster0,QuadMeshCluster &cluster1)
   {
+    //Generate triangle mesh, each triangle contains 3 indices
     TriangleMesh mesh;    
     
     // === cluster0 ===
@@ -1357,6 +1358,7 @@ namespace embree {
       });
 #endif      
 
+      //Clusters are being merged
       bool merged_pair = false;
 
 #if ENABLE_MT_PREPROCESS == 1                  
@@ -1371,20 +1373,27 @@ namespace embree {
           {
             if ( i < nearest_neighborID[i])
             {
+              //If all PLOC conditions are true, store the two cluster IDs
               const uint32_t leftClusterID = index_buffer[i];
               const uint32_t rightClusterID = index_buffer[nearest_neighborID[i]];
-              
+
+              //Call to merge, I assume this only computes the simplification ratio
+              //TODO: What does this do exactly?
               DBG_PRINT4("MERGE",leftClusterID,rightClusterID,getSimplificationRatio(clusters[leftClusterID], clusters[rightClusterID]));
+              //Set new depth
               const uint32_t newDepth =  std::max(clusters[leftClusterID].depth,clusters[rightClusterID].depth)+1;
               
               std::vector<QuadMeshCluster> new_clusters;
+              //Try and simplify the two clusters into the new cluster
+              //TODO: How do these methods work?
 #if ENABLE_DAG == 1
               bool success = mergeSimplifyQuadMeshClusterDAG( clusters[leftClusterID], clusters[rightClusterID], new_clusters);              
 #else              
               bool success = mergeSimplifyQuadMeshCluster( clusters[leftClusterID], clusters[rightClusterID], new_clusters);
 #endif              
               DBG_PRINT2(success,newDepth);
-              
+
+              //If the merging was successful, and the new depth is below the max depth, create a new cluster merged by left and right
               if (success && newDepth <= MAX_DEPTH_LIMIT)
               {
                 merged_pair = true;
@@ -1397,6 +1406,7 @@ namespace embree {
                 new_cluster0.leftID  = leftClusterID;
                 new_cluster0.rightID = rightClusterID;
                 new_cluster0.neighborID = -1;
+                //TODO: What does initBounds() do?
                 new_cluster0.initBounds();
                 new_cluster0.lod_root = true;
                 
@@ -1409,6 +1419,7 @@ namespace embree {
 
                 DBG_PRINT4("MERGE",newClusterID0,leftClusterID,rightClusterID);
 
+                //If the node was split during merging and create another new cluster
                 if (new_clusters.size() == 2)
                 {
                   DBG_PRINT("SPLIT CASE");
@@ -1434,6 +1445,7 @@ namespace embree {
 
 
 #if ENABLE_INVALID_MERGE_IDS == 1
+                  //Mutually exclude each cluster from merging
                   clusters[newClusterID1].addInvalidMergeID( newClusterID0 );
                   clusters[newClusterID0].addInvalidMergeID( newClusterID1 );                  
 #endif
