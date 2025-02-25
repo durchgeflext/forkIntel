@@ -143,7 +143,8 @@ namespace embree {
       return false;
     }
   };
-  
+
+  //Reorder quads inside a cluster and then extracts the IDs
   void QuadMeshCluster::reorderPLOC()
   {
     const uint32_t numQuads = quads.size();
@@ -222,7 +223,7 @@ namespace embree {
 
 
     // ==============
-
+	//Why is an entire bvh structure necessary? Isn't morton enough?
     uint32_t numPrims = numQuads;
 
     for (uint32_t i=0;i<numPrims;i++)
@@ -315,7 +316,8 @@ namespace embree {
       PRINT2(IDs.size(),numQuads);
       FATAL("IDs.size() != numQuads");
     }
-    
+
+    //This is just swapping
     for (uint32_t i=0;i<numQuads;i++)
       new_quads[i] = quads[IDs[i]];
 
@@ -373,8 +375,10 @@ namespace embree {
   //Splits a Cluster in half
   bool QuadMeshCluster::split(QuadMeshCluster &left, QuadMeshCluster &right)
   {
+    //Reorder using PLOC
     reorderPLOC();
-    
+
+    //Divide quads into left half and right half
     uint32_t mid = quads.size() / 2;
     for (uint32_t i=0;i<mid;i++)
     {
@@ -396,6 +400,7 @@ namespace embree {
       right.quads.push_back(Quad(v0,v1,v2,v3));
     }
 
+    //Return if this was successful
     if (left.vertices.size() <= 256 && left.quads.size() <= LossyCompressedMeshCluster::MAX_QUADS_PER_CLUSTER &&
         right.vertices.size() <= 256 && right.quads.size() <= LossyCompressedMeshCluster::MAX_QUADS_PER_CLUSTER)
       return true;
