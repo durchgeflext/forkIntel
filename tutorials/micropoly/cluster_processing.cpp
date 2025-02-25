@@ -738,6 +738,7 @@ namespace embree {
 
       const size_t new_numTriangles = new_numIndices/3;
 
+      //If not enough reduction, return false
       if ((float)new_numTriangles / numTriangles > REDUCTION_THRESHOLD) { DBG_PRINT5("NOT ENOUGH REDUCTION",numTriangles,new_numTriangles,expectedTriangles,iterations); return false; }
       
       DBG_PRINT2(expectedTriangles,new_numTriangles);
@@ -776,7 +777,8 @@ namespace embree {
         DBG_PRINT("RETRY quadMesh.vertices.size()");
         retry = true;
       }
-      
+
+      //If there are too many quads, split the cluster again, if successful, reorderPLOC the clusters again
       if (retry)
       {
         DBG_PRINT("SPLIT DAG");
@@ -803,7 +805,7 @@ namespace embree {
     for (uint32_t i=0;i<quadMeshes.size();i++)
       DBG_PRINT2(quadMeshes[i].quads.size(),quadMeshes[i].vertices.size());
       
-    for (uint32_t i=0;i<quadMeshes.size();i++)      
+    for (uint32_t i=0;i<quadMeshes.size();i++)
       quadMeshes[i].reorderPLOC();
       
     delete [] new_triangles;
@@ -1390,7 +1392,8 @@ namespace embree {
               bool success = mergeSimplifyQuadMeshClusterDAG( clusters[leftClusterID], clusters[rightClusterID], new_clusters);              
 #else              
               bool success = mergeSimplifyQuadMeshCluster( clusters[leftClusterID], clusters[rightClusterID], new_clusters);
-#endif              
+#endif
+              //If remeshing was unsuccessful, give up (thisbecomes a root then)
               DBG_PRINT2(success,newDepth);
 
               //If the merging was successful, and the new depth is below the max depth, create a new cluster merged by left and right
